@@ -5,6 +5,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Generate from "./panels/Generate";
+import Timer from "./panels/Timer";
 
 const App = () => {
 	const [scheme, setScheme] = useState('light')
@@ -30,7 +31,7 @@ const App = () => {
 
 	const go = to => {
 		setActivePanel(to);
-		console.log(players)
+		console.log(players, 'go')
 	};
 
 	return (
@@ -42,6 +43,7 @@ const App = () => {
 							<View activePanel={activePanel}>
 								<Home id='home' changePlayers={setPlayers} go={go} />
 								<Generate players={players} id="generate" go={go} />
+								<Timer players={players} id="timer" go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>

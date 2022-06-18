@@ -41,7 +41,7 @@ const Generate = ({ id, players, go }) => {
         }
 
         if (wasPlayers > players) {
-            go('home')
+            go('timer')
         }
         return role
     }
@@ -66,7 +66,7 @@ const Generate = ({ id, players, go }) => {
 Generate.propTypes = {
     id: PropTypes.string.isRequired,
     players: PropTypes.number.isRequired,
-    go: PropTypes.string.isRequired
+    go: PropTypes.func.isRequired
 };
 
 export default Generate;
