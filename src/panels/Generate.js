@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {Panel, PanelHeader, Group, Text, Div, Cell} from '@vkontakte/vkui';
-import PropTypes, {number} from "prop-types";
+import PropTypes from "prop-types";
 
 const Generate = ({ id, players, go }) => {
     const [wasPlayers, setWasPlayers] = useState(0)

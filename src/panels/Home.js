@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Panel, PanelHeader, Group, Cell, List, FormItem, Input, Button} from '@vkontakte/vkui';
+import {Panel, PanelHeader, Group, FormItem, Input, Button} from '@vkontakte/vkui';
 import PropTypes from "prop-types";
 
 const Home = ({ id, changePlayers, go }) => (
