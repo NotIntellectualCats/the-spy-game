@@ -1,38 +1,33 @@
 import React from 'react';
 
-import {Panel, PanelHeader, Group, Cell, List} from '@vkontakte/vkui';
+import {Panel, PanelHeader, Group, Cell, List, FormItem, Input, Button} from '@vkontakte/vkui';
 import PropTypes from "prop-types";
 
-const Home = ({ id }) => (
+const Home = ({ id, changePlayers, go }) => (
 	<Panel id={id}>
-		<PanelHeader>Локации</PanelHeader>
+		<PanelHeader>Новая игра</PanelHeader>
 		<Group>
-			<List>
-				<Cell>Стройплощадка</Cell>
-				<Cell>Метро</Cell>
-				<Cell>Стадион</Cell>
-				<Cell>Музей</Cell>
-				<Cell>Экскурсионный автобус</Cell>
-				<Cell>Рок-концерт</Cell>
-				<Cell>Шоколадная фабрика</Cell>
-				<Cell>Кладбище</Cell>
-				<Cell>Джаз-бэнд</Cell>
-				<Cell>Виноградник</Cell>
-				<Cell>Порт</Cell>
-				<Cell>Автогонки</Cell>
-				<Cell>Тюрьма</Cell>
-				<Cell>Выставка кошек</Cell>
-				<Cell>Парламент</Cell>
-				<Cell>Дом престарелых</Cell>
-				<Cell>Шахта</Cell>
-				<Cell>Библиотека</Cell>
-			</List>
+				<FormItem top="Сколько игроков учавствуют?">
+				<Input type="number`" autoFocus={true} onChange={e => { changePlayers(parseInt(e.target.value) - 1) }} />
+				<br />
+				<Button
+					stretched={true}
+					mode="secondary"
+					onClick={() => {
+						go('generate')
+					}}
+				>
+					Создать
+				</Button>
+			</FormItem>
 		</Group>
 	</Panel>
 );
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
+	changePlayers: PropTypes.func.isRequired,
+	go: PropTypes.func.isRequired
 };
 
 export default Home;
