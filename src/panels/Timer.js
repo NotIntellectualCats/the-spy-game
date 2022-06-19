@@ -9,10 +9,10 @@ class Timer extends React.Component {
     {
         super(undefined)
         this.id = props.id
-        this.timeRemain = (props.players + 1) * 60
+        this.timeRemain = props.players * 60
         this.ended = false
         this.state = {
-            humanReadableTime: `${this.props.players}:00`
+            humanReadableTime: `00:00`
         }
     }
     componentDidMount () {
